@@ -3481,7 +3481,8 @@ FTKR.CSS = FTKR.CSS || {};
         var current = this.evalCssStrFormula(actor, gauge.current);
         var max = this.evalCssStrFormula(actor, gauge.max);
         if (gauge.color1 >= 0 && gauge.color2 >= 0) {
-            var rate = isNaN(max) ? 1 : current / max;
+            var rate = (max <= 0 || isNaN(max)) ? 1 : current / max;
+			rate.clamp(0,1);
             var color1 = this.textColor(gauge.color1);
             var color2 = this.textColor(gauge.color2);
             this.drawGauge(x, y, width, rate, color1, color2);

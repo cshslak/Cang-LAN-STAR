@@ -1509,6 +1509,15 @@ Scene_Equip.prototype.onSlotCancel = function() {
 };
 
 Scene_Equip.prototype.onItemOk = function() {
+	if(this._slotWindow.index() == 12 && !this._itemWindow.item() && $gameVariables.value(1265) < 100){
+		TickerManager.show(`不可以脱掉`);
+		this._slotWindow.activate();
+		this._slotWindow.refresh();
+		this._itemWindow.deselect();
+		this._itemWindow.refresh();
+		this._statusWindow.refresh();
+		return;
+	}
     SoundManager.playEquip();
     this.actor().changeEquip(this._slotWindow.index(), this._itemWindow.item());
     this._slotWindow.activate();
@@ -2484,7 +2493,7 @@ Scene_Battle.prototype.startActorCommandSelection = function() {
 };
 
 Scene_Battle.prototype.commandAttack = function() {
-    BattleManager.inputtingAction().setAttack();
+    if(BattleManager.inputtingAction()) BattleManager.inputtingAction().setAttack();
     this.selectEnemySelection();
 };
 
@@ -2497,7 +2506,7 @@ Scene_Battle.prototype.commandSkill = function() {
 };
 
 Scene_Battle.prototype.commandGuard = function() {
-    BattleManager.inputtingAction().setGuard();
+    if(BattleManager.inputtingAction()) BattleManager.inputtingAction().setGuard();
     this.selectNextCommand();
 };
 
@@ -2525,7 +2534,7 @@ Scene_Battle.prototype.selectActorSelection = function() {
 
 Scene_Battle.prototype.onActorOk = function() {
     var action = BattleManager.inputtingAction();
-    action.setTarget(this._actorWindow.index());
+    if(action) action.setTarget(this._actorWindow.index());
     this._actorWindow.hide();
     this._skillWindow.hide();
     this._itemWindow.hide();
@@ -2555,7 +2564,7 @@ Scene_Battle.prototype.selectEnemySelection = function() {
 
 Scene_Battle.prototype.onEnemyOk = function() {
     var action = BattleManager.inputtingAction();
-    action.setTarget(this._enemyWindow.enemyIndex());
+    if(action) action.setTarget(this._enemyWindow.enemyIndex());
     this._enemyWindow.hide();
     this._skillWindow.hide();
     this._itemWindow.hide();
@@ -2582,7 +2591,7 @@ Scene_Battle.prototype.onEnemyCancel = function() {
 Scene_Battle.prototype.onSkillOk = function() {
     var skill = this._skillWindow.item();
     var action = BattleManager.inputtingAction();
-    action.setSkill(skill.id);
+    if(action) action.setSkill(skill.id);
     BattleManager.actor().setLastBattleSkill(skill);
     this.onSelectAction();
 };
@@ -2595,7 +2604,7 @@ Scene_Battle.prototype.onSkillCancel = function() {
 Scene_Battle.prototype.onItemOk = function() {
     var item = this._itemWindow.item();
     var action = BattleManager.inputtingAction();
-    action.setItem(item.id);
+    if(action) action.setItem(item.id);
     $gameParty.setLastItem(item);
     this.onSelectAction();
 };
@@ -2609,6 +2618,10 @@ Scene_Battle.prototype.onSelectAction = function() {
     var action = BattleManager.inputtingAction();
     this._skillWindow.hide();
     this._itemWindow.hide();
+	if(!action){
+		this.selectActorSelection();
+		return;
+	}
     if (!action.needsSelection()) {
         this.selectNextCommand();
     } else if (action.isForOpponent()) {

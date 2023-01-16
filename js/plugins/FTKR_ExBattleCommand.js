@@ -598,7 +598,7 @@ FTKR.EBC = FTKR.EBC || {};
     Scene_Battle.prototype.commandCustom = function() {
         var skill = this._actorCommandWindow.currentEbcSkill();
         var action = BattleManager.inputtingAction();
-        action.setSkill(skill.id);
+        if(action) action.setSkill(skill.id);
         BattleManager.actor().setLastBattleSkill(skill);
         this.onSelectAction();
     };

@@ -23,8 +23,12 @@
             var Other2EqID = 0
 
 
-            for(var i = 1; i < 7; i++){
-                EquipID = $gameActors._data[1]._equips[EquipNo]._itemId
+            for(var i = 0; i < $gameActors._data[1]._equips.length; i++){
+				if($gameActors._data[1]._equips[EquipNo] != null){
+					EquipID = $gameActors._data[1]._equips[EquipNo]._itemId;
+				}else{
+					EquipID = 0;
+				}
                 if(EquipID >= 1){
                     if(EquipNo == Other1){Other1EqID = EquipID}
                     if(EquipNo == Other2 && EquipID == Other1EqID){//同一装備の場合スルー
@@ -53,35 +57,34 @@
             SkillReset()
 
             //Pスキル効果
-            var SkillID = 135
-            for(var i = SkillID; i < 999; i++){
-                if($dataSkills[i].meta.flag == "SkillEffect"){
-                    
-                    if($gameActors.actor(1).addedSkills().contains(i) || $gameActors.actor(1).isLearnedSkill(i)){
-                        $gameVariables._data[4211] = $dataSkills[i].meta.Skill01
-                        $gameVariables._data[4212] = $dataSkills[i].meta.Skill02
-                        $gameVariables._data[4213] = $dataSkills[i].meta.Skill03
-                        $gameVariables._data[4214] = $dataSkills[i].meta.Skill04
-                        $gameVariables._data[4215] = $dataSkills[i].meta.Skill05
-                        $gameVariables._data[4216] = $dataSkills[i].meta.Skill06
-                        $gameVariables._data[4217] = $dataSkills[i].meta.Skill07
-                        $gameVariables._data[4218] = $dataSkills[i].meta.Skill08
-                        $gameVariables._data[4219] = $dataSkills[i].meta.Skill09
-                        $gameVariables._data[4220] = $dataSkills[i].meta.Skill10
-                        //console.log($dataSkills[i].meta.Skill01)
-                        //スキル効果入力
-                        AddSkillEffect()
-                    }
-                }
-                if(i == 255){i = 700}
-            }
-            SkillReset()
-            AddSkillEffectBase()
+			var SKlist = [];
+			$gameActors.actor(1)._skills.concat($gameActors.actor(1).addedSkills()).forEach(function(id) {
+				if ((id >= 700 || (id >= 135 && id <= 255)) && !SKlist.contains(id)) {
+					SKlist.push(id);
+				}
+			});
+			for(var i = 0;i < SKlist.length;i++){
+				if($dataSkills[SKlist[i]].meta.flag == "SkillEffect"){
+					$gameVariables._data[4211] = $dataSkills[SKlist[i]].meta.Skill01
+                    $gameVariables._data[4212] = $dataSkills[SKlist[i]].meta.Skill02
+                    $gameVariables._data[4213] = $dataSkills[SKlist[i]].meta.Skill03
+                    $gameVariables._data[4214] = $dataSkills[SKlist[i]].meta.Skill04
+                    $gameVariables._data[4215] = $dataSkills[SKlist[i]].meta.Skill05
+                    $gameVariables._data[4216] = $dataSkills[SKlist[i]].meta.Skill06
+                    $gameVariables._data[4217] = $dataSkills[SKlist[i]].meta.Skill07
+                    $gameVariables._data[4218] = $dataSkills[SKlist[i]].meta.Skill08
+                    $gameVariables._data[4219] = $dataSkills[SKlist[i]].meta.Skill09
+                    $gameVariables._data[4220] = $dataSkills[SKlist[i]].meta.Skill10
+                    AddSkillEffect();
+				}
+			}
+            SkillReset();
+            AddSkillEffectBase();
         }
 
 
-        function SkillResetAll(){
-            for(var i = 4221; i <= 4320; i++){
+        function SkillResetAll(){ //改上限需要动
+            for(var i = 4221; i <= 4322; i++){
                 $gameVariables._data[i] = 0
             }
         }
@@ -103,9 +106,9 @@
             }
         }
 
-        function AddSkillEffectBase(){
+        function AddSkillEffectBase(){ //改上限需要动
             var TagSkillID = 21//スキル番号(21からなのは都合上)
-            var TagSkillIDMax = 121//スキル最大数(実質100まで)
+            var TagSkillIDMax = 123//スキル最大数(実質100まで)
             var BaseVariable = 0//実際に判定に使う効果加算対象の変数番号
             var AddVariable = 0//加算する効果値の変数番号
             var BaseNumber = 0//効果初期値

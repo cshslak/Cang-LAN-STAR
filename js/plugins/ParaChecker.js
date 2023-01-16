@@ -21,7 +21,7 @@
             $gameVariables._data[215] = $gameParty._gold //所持金
             $gameVariables._data[722] = $gameVariables.value(1209) //衣装耐久スキル
             $gameVariables._data[1178] = $gameVariables.value(1280) / 15//魂の侵蝕
-            if($gameVariables.value(1178) >= 6){$gameVariables._data[1178] = 5}
+            if($gameVariables.value(1178) > 6){$gameVariables._data[1178] = 6}
 
 
             if($gameVariables.value(1178) >= 1){$gameSwitches.setValue(1031,true)}else{$gameSwitches.setValue(1031,false)}
@@ -50,11 +50,11 @@
             }
 
             //スキル入力
-            $gameVariables._data[1110] = $gameVariables.value(1271)//羞恥
+            //$gameVariables._data[1110] = $gameVariables.value(1271)//羞恥
             $gameVariables._data[1111] = $gameVariables.value(1272)//精液
             $gameVariables._data[1112] = $gameVariables.value(1273)//被虐
-            $gameVariables._data[1113] = $gameVariables.value(1274)//変態
-            $gameVariables._data[1114] = $gameVariables.value(1275)//奉仕
+            $gameVariables._data[1113] = $gameVariables.value(1274)//奉仕
+            //$gameVariables._data[1114] = $gameVariables.value(1275)//変態
 
 
 
@@ -66,31 +66,24 @@
 
             //ステート
             if($gameMap.isEventRunning()){
-
             }else{
-                if($gameActors.actor(1).isStateAffected(123) &&  $gamePlayer._moveSpeed != $gameVariables.value(172)){
+				if($gameActors.actor(1).isStateAffected(123) && $gamePlayer._moveSpeed != $gameVariables.value(172)){
                     $gamePlayer._moveSpeed = $gameVariables.value(172);
                 }else if($gamePlayer._moveSpeed != $gameVariables.value(173)){
                     $gamePlayer._moveSpeed = $gameVariables.value(173);
-                }else{}
+                }
             }
 
             //装備情報の取得
-            var ClothEqNum = 1//変身衣装変更でも使う
+			var ClothShame = 0;
+            var ClothEqNum = 1
             if($gameActors._data[1]._equips[ClothEqNum]._itemId >= 5){
-                var StandEqNum = $gameActors._data[1]._equips[ClothEqNum]._itemId//衣装指定する場合はここの処理変更
-                $gameVariables._data[762] = $dataArmors[StandEqNum].meta.ClothName
-                //var StandClothID = Number($dataArmors[StandEqNum].meta.ClothPicNum); //衣装ピクチャ番号　現状使わない
-                //var UnderPicFlag = Number($dataArmors[StandEqNum].meta.ClothUndeFlag); //衣装の下着フラグ
-                //var ClothPicFileNum = $dataArmors[StandEqNum].meta.FileNumCloth
-                //var ClothNippleEx = Number($dataArmors[StandEqNum].meta.ClothNipple)
+                var StandEqNum = $gameActors._data[1]._equips[ClothEqNum]._itemId;//衣装指定する場合はここの処理変更
+                $gameVariables._data[762] = $dataArmors[StandEqNum].meta.ClothName;
+				ClothShame = $dataArmors[StandEqNum].meta.Shame;
             }else{
-                $gameVariables._data[762] = "Naked"
-                // var StandClothTag = "Naked"
-                // var StandClothID = 0
-                //var UnderPicFlag = 1; //下着
-                //var ClothPicFileNum = 0
-                //var ClothNippleEx = 1
+                $gameVariables._data[762] = "Naked";
+				ClothShame = 80;
             }
 
             if($gameSwitches.value(131)){//変身中の場合
@@ -100,59 +93,70 @@
                 if(ClothHP <= 0){//衣装耐久ゼロの場合
                     //衣装全損
                     if($gameActors.actor(1).isStateAffected(95)){}else{
-                        $gameActors.actor(1).removeState(94)
-                        $gameActors.actor(1).addState(95)
-                    }                    
+                        $gameActors.actor(1).removeState(94);
+                        $gameActors.actor(1).addState(95);
+                    }  
+					ClothShame = 70;		
                 }
                 else if(ClothHPHalf > ClothHP){//衣装耐久が半減値以下
                     //衣装半壊
                     if($gameActors.actor(1).isStateAffected(94)){}else{
-                        $gameActors.actor(1).removeState(95)
-                        $gameActors.actor(1).addState(94)
-                    }              
+                        $gameActors.actor(1).removeState(95);
+                        $gameActors.actor(1).addState(94);
+                    }       
+					ClothShame = 40;		
                 }
                 else{
                     //衣装万全
                     if($gameActors.actor(1).isStateAffected(94) || $gameActors.actor(1).isStateAffected(95)){
-                        $gameActors.actor(1).removeState(94)
-                        $gameActors.actor(1).removeState(95)
+                        $gameActors.actor(1).removeState(94);
+                        $gameActors.actor(1).removeState(95);	
                     }
-                    
+                    ClothShame = 0;
                 }
-            }else{$gameVariables._data[235] = 0}//変身フラグ
+            }else{
+				$gameVariables._data[235] = 0
+				$gameActors.actor(1).removeState(94)
+                $gameActors.actor(1).removeState(95)
+			}
+			//Shame补正
+			if($gameActors.actor(1).isStateAffected(55)) ClothShame = ClothShame / 2 + 40;
+			if($gameActors.actor(1).hasArmor($dataArmors[426])) ClothShame -= 200;
+			if($gameSwitches.value(2922) || $gameSwitches.value(2923)) ClothShame += 20;
 
             //ステルス？
-            if($gameActors.actor(1).isStateAffected(50)){
-                //$gameSwitches.setValue(162,true)
+            if($gameVariables.value(1215) > 0){
                 $gameSwitches._data[162] = true;
             }else{
-                //$gameSwitches.setValue(162,false)
                 $gameSwitches._data[162] = false;
+            }
+			//眼罩效果
+			if($gameVariables.value(1210) > 0){
+                $gameSwitches._data[2917] = true;
+            }else{
+                $gameSwitches._data[2917] = false;
             }
 
             if($gameActors.actor(1).isStateAffected(49)){
-                //$gameSwitches.setValue(162,true)
                 $gameSwitches._data[70] = true;
             }else{
-                //$gameSwitches.setValue(162,false)
                 $gameSwitches._data[70] = false;
             }            
 
 
-            //衣装損壊による羞恥付与
-            if($gameActors.actor(1).isStateAffected(95) && $gameVariables.value(1093) < 100 && $gameSwitches.value(131)){
-                if($gameActors.actor(1).isStateAffected(28)){
-                }else{
-                    $gameActors.actor(1).addState(28)
-                }
-            }else if($gameActors.actor(1).isStateAffected(94) && $gameVariables.value(1093) < 50 && $gameSwitches.value(131)){
-                if($gameActors.actor(1).isStateAffected(28)){
+            //羞耻状态附加
+			if(ClothShame > $gameVariables.value(1093)){
+				if($gameActors.actor(1).isStateAffected(28)){
                 }else{
                     $gameActors.actor(1).addState(28)
                 }
             }else if($gameActors.actor(1).isStateAffected(28)){
                 $gameActors.actor(1).removeState(28)
             }
+			
+			if(!$gameParty.inBattle() && $gameMap.regionId(this.character(-1).x,this.character(-1).y) != 151){
+					$gameVariables._data[148] = 0;
+			}
 
 
         //パラメータ上限チェック
@@ -184,6 +188,7 @@
         Paramax0_999(Sub)
         Sub = 1019//催眠
         Paramax0_100(Sub)
+		if($gameVariables.value(1020) > 30) $gameVariables._data[1020] = 30;
     }
 }
 
@@ -192,9 +197,9 @@
 
 
 function ParamaxExtasy(Sub) {
-    var high = $gameVariables.value(1031)
-    var low = 0
-    $gameVariables._data[Sub] = $gameVariables.value(Sub).clamp(low,high)
+    var high = $gameVariables.value(1031) + $gameActors.actor(1).isStateAffected(322) * 99999;
+    var low = 0;
+    $gameVariables._data[Sub] = $gameVariables.value(Sub).clamp(low,high);
     }
 
 function ParamaxLust(Sub) {
@@ -219,7 +224,7 @@ function ParamaxErosion(Sub) {//侵蝕度
 
 function ParamaxEstrus(Sub) {
     var high = 200
-    var low = 0
+    var low = $gameVariables.value(1282);
     $gameVariables._data[Sub] = $gameVariables.value(Sub).clamp(low,high)
     }
 

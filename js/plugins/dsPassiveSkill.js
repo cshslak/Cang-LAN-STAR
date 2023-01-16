@@ -286,10 +286,16 @@ Imported.dsPassiveSkill = true;
 	/** Game_Actor */
 	Game_Actor.prototype.iteratePassiveSkill = function(metaName, callback)
 	{
-		this.skills().forEach(function(skill) {
-			if ( skill.meta[metaName] )
+		var list = [];
+		this._skills.concat(this.addedSkills()).forEach(function(id){
+			if (id > 134 && id < 262 && !list.contains(id)) {
+				list.push(id);
+			}
+		});
+		list.forEach(function(skillId){
+			if ($dataSkills[skillId].meta[metaName])
 			{
-				callback(skill.meta[metaName]);
+				callback($dataSkills[skillId].meta[metaName]);
 			}
 		});
 	};
@@ -331,7 +337,7 @@ Imported.dsPassiveSkill = true;
 				ret += Utility.calcParamBoost(baseParam, splitData[0]);
 			}
 		}.bind(this));
-		var tagINDM = 'passiveINDM' + ('0'+paramId).slice(-1);
+		/* var tagINDM = 'passiveINDM' + ('0'+paramId).slice(-1);
 		this.iteratePassiveSkill(tagINDM, function(metaData) {
 			var re = /(\d+)\,([-]?\d+)(%?)/i;
 			var match = re.exec(metaData);
@@ -350,7 +356,7 @@ Imported.dsPassiveSkill = true;
 					}
 				}
 			}
-		}.bind(this));
+		}.bind(this)); */
 		return ret;
 	};
 
@@ -370,6 +376,7 @@ Imported.dsPassiveSkill = true;
 	Game_Actor.prototype.paramPlusBoost = function(paramId)
 	{
 		var ret = 0;
+		return ret;
 		this.equips().forEach(function(item) {
 			if ( item )
 			{
@@ -414,6 +421,7 @@ Imported.dsPassiveSkill = true;
 	Game_Actor.prototype.xparam = function(xparamId)
 	{
 		var ret = this.xparamDirect(xparamId);
+		return ret;
 		var tagPBST = 'passiveXPBST' + ('0'+xparamId).slice(-1);
 		this.iteratePassiveSkill(tagPBST, function(metaData) {
 			ret += Utility.calcXParamBoost(metaData);
@@ -454,7 +462,7 @@ Imported.dsPassiveSkill = true;
 		this.iteratePassiveSkill(tagPBST, function(metaData) {
 			ret += Utility.calcSParamBoost(metaData);
 		});
-		var tagPBSTEX = 'passiveSPBSTEX' + ('0'+sparamId).slice(-1);
+		/* var tagPBSTEX = 'passiveSPBSTEX' + ('0'+sparamId).slice(-1);
 		this.iteratePassiveSkill(tagPBSTEX, function(metaData) {
 			var splitData = metaData.split(',');
 			if ( this.evaluateCondition(splitData[1], Number(splitData[2])) )
@@ -473,11 +481,11 @@ Imported.dsPassiveSkill = true;
 					ret += Number(match[2]) * 0.01;
 				}
 			}
-		}.bind(this));
+		}.bind(this)); */
 		return ret;
 	};
 
-	var _Game_Actor_elementRate = Game_Actor.prototype.elementRate;
+/* 	var _Game_Actor_elementRate = Game_Actor.prototype.elementRate;
 	Game_Actor.prototype.elementRate = function(elementId)
 	{
 		var ret = _Game_Actor_elementRate.call(this, elementId);
@@ -513,14 +521,14 @@ Imported.dsPassiveSkill = true;
 	Game_Actor.prototype.stateResistSet = function()
 	{
 		var ret = _Game_Actor_stateResistSet.call(this);
-		var num = $dataStates.length;
-		for ( var ii = 1; ii < num; ii++ )
+		var stateList = []; //之后技能能影响的状态免疫的在这里加
+		for ( var ii = 0; ii < stateList.list; ii++ )
 		{
-			var tag = 'passiveSTREG' + ('0000'+ii).slice(-4);
+			var tag = 'passiveSTREG' + ('0000'+stateList[ii]).slice(-4);
 			this.iteratePassiveSkill(tag, function(metaData) {
-				if ( !ret.contains(ii) )
+				if ( !ret.contains(stateList[ii]) )
 				{
-					ret.push(ii);
+					ret.push(stateList[ii]);
 				}
 			});
 		}
@@ -664,11 +672,11 @@ Imported.dsPassiveSkill = true;
 			ret = true;
 		});
 		return ret;
-	};
+	}; */
 
 	//--------------------------------------------------------------------------
 	/** Game_Party */
-	var _Game_Party_ratePreemptive = Game_Party.prototype.ratePreemptive;
+	/* var _Game_Party_ratePreemptive = Game_Party.prototype.ratePreemptive;
 	Game_Party.prototype.ratePreemptive = function(troopAgi)
 	{
 		var rate = _Game_Party_ratePreemptive.call(this, troopAgi);
@@ -690,7 +698,7 @@ Imported.dsPassiveSkill = true;
 			});
 		});
 		return rate.clamp(0.0, 1.0);
-	};
+	}; */
 
 	//--------------------------------------------------------------------------
 	/** Window_BattleSkill */

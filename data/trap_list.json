@@ -1,1 +1,912 @@
-{"1":{"TrapName":"\u5a9a\u6bd2\u55b7\u96fe","TrapMemo":"\u542b\u6709\u5927\u91cf\u50ac\u6deb\u6210\u5206\u7684\u6c14\u4f53\uff0c\u4f1a\u4f7f\u53d1\u60c5\u503c\u4e0a\u5347\u3002","DamagePoint":"20","TrapType":"Touch","DamageType":"Estrus"},"2":{"TrapName":"\u89e6\u624b\u7231\u629a","TrapMemo":"\u6cbe\u6ee1\u7c98\u6db2\u7684\u89e6\u624b\u73a9\u5f04\u7740\u80f8\u90e8\u3002","DamagePoint":"20","TrapType":"Touch","DamageType":"Extasy"},"3":{"TrapName":"\u767d\u6d4a\u6db2\u55b7\u5c04","TrapMemo":"\u5411\u8eab\u4f53\u55b7\u5c04\u767d\u6d4a\u6db2\u3002","DamagePoint":"1","TrapType":"Touch","DamageType":"Semen"},"4":{"TrapName":"\u80fd\u91cf\u5438\u6536","TrapMemo":"\u80fd\u591f\u5438\u6536HP\u7684\u53ef\u7591\u7684\u7403\u4f53\u3002","DamagePoint":"50","TrapType":"Touch","DamageType":"HP"},"5":{"TrapName":"\u8f6c\u79fb\u95e8","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"6":{"TrapName":"\u956d\u5c04\u6fc0\u5149","TrapMemo":"\u80fd\u591f\u5438\u6536HP\u7684\u53ef\u7591\u7684\u5149\u7ebf\u3002","DamagePoint":"50","TrapType":"Touch","DamageType":"HP"},"7":{"TrapName":"\u6bd2\u6cbc\u6cfd","TrapMemo":"\u6bcf\u6b21\u79fb\u52a8\u90fd\u4f1a\u53d7\u5230\u4fb5\u8680\uff0c\u5bf9HP\u9020\u6210\u4f24\u5bb3\u3002","DamagePoint":"5","TrapType":"Field","DamageType":"HP"},"8":{"TrapName":"\u9b54\u8680\u7684\u6bd2\u6cbc\u6cfd","TrapMemo":"\u6bcf\u6b21\u79fb\u52a8\u90fd\u4f1a\u88ab\u593a\u8d70\u9b54\u529b\uff0c\u6d88\u8017MP\u3002","DamagePoint":"5","TrapType":"Field","DamageType":"MP"},"9":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"10":{"TrapName":"\u55b7\u5c04","TrapMemo":"\u5411\u8eab\u4f53\u55b7\u5c04\u767d\u6d4a\u6db2\u3002","DamagePoint":"1","TrapType":"Floor","DamageType":"Semen"},"11":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"12":{"TrapName":"\u5a9a\u836f\u6cbc\u6cfd","TrapMemo":"\u6bcf\u6b21\u79fb\u52a8\u6bd2\u90fd\u4f1a\u6e17\u900f\u5230\u8eab\u4f53\u91cc\u3002","DamagePoint":"1","TrapType":"Field","DamageType":"Estrus"},"13":{"TrapName":"\u7cbe\u6db2\u6cbc\u6cfd","TrapMemo":"\u6bcf\u6b21\u79fb\u52a8\u90fd\u4f1a\u6709\u5927\u91cf\u7684\u7cbe\u6db2\u5f04\u810f\u8eab\u4f53\u3002","DamagePoint":"1","TrapType":"Field","DamageType":"Semen"},"14":{"TrapName":"\u5730\u9762\u4e4b\u624b","TrapMemo":"\u88ab\u4ece\u5730\u9762\u4e0a\u4f38\u51fa\u6765\u7684\u624b\u62d8\u675f\u7136\u540e\u73a9\u5f04\u7740\u3002","DamagePoint":"15","TrapType":"Floor","DamageType":"Extasy"},"15":{"TrapName":"\u5899\u4e4b\u624b","TrapMemo":"\u88ab\u4ece\u5899\u4e0a\u4f38\u51fa\u6765\u7684\u65e0\u6570\u53ea\u624b\u73a9\u5f04\u7740\u5168\u8eab\u3002","DamagePoint":"20","TrapType":"Touch","DamageType":"Extasy"},"16":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"17":{"TrapName":"\u5e02\u6c11\u4e4b\u624b","TrapMemo":"\u4ece\u4eba\u7fa4\u4e2d\u4f38\u51fa\u6765\u7684\u4e0b\u6d41\u7684\u624b\u3002","DamagePoint":"20","TrapType":"Touch","DamageType":"Extasy"},"18":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"19":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"20":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"21":{"TrapName":"\u89e6\u624b\u6cbc\u6cfd","TrapMemo":"","DamagePoint":"","TrapType":"Field","DamageType":""},"22":{"TrapName":"\u89e6\u624b\u4e4b\u58c1","TrapMemo":"\u88ab\u4ece\u5899\u4e0a\u7a81\u7136\u957f\u51fa\u6765\u7684\u89e6\u624b\u7f20\u4f4f\uff0c\u8d23\u5f04\u7740\u5168\u8eab\u3002","DamagePoint":"10","TrapType":"Touch","DamageType":"Extasy"},"23":{"TrapName":"\u5730\u4e4b\u89e6\u624b","TrapMemo":"\u4ece\u5730\u677f\u4e0a\u4f38\u51fa\u7684\u89e6\u624b\u523a\u6fc0\u7740\u79d8\u5904\u3002","DamagePoint":"10","TrapType":"Floor","DamageType":"Extasy"},"24":{"TrapName":"\u5730\u4e4b\u89e6\u624b","TrapMemo":"\u4ece\u5730\u677f\u4e0a\u4f38\u51fa\u7684\u89e6\u624b\u523a\u6fc0\u7740\u540e\u7a74\u3002","DamagePoint":"10","TrapType":"Floor","DamageType":"Extasy"},"25":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"26":{"TrapName":"\u89e6\u624b\u62d8\u675f","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"27":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"28":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"29":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"30":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"31":{"TrapName":"\u89e6\u624b\u8d23\u5f04","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"32":{"TrapName":"\u5237\u5b50\u89e6\u624b\u8d23\u5f04","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"33":{"TrapName":"\u5438\u76d8\u89e6\u624b\u8d23\u5f04","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"34":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"35":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"36":{"TrapName":"\u89e6\u624b\u5bc4\u751f","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"37":{"TrapName":"\u89e6\u624b\u670d","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"38":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"39":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"40":{"TrapName":"\u50ac\u7720\u88c5\u7f6e","TrapMemo":"\u5996\u529b\u4fb5\u8680\u7740\u5fc3\u7075\u2026\u2026\u3002","DamagePoint":"10","TrapType":"Touch","DamageType":"Hypnosis"},"41":{"TrapName":"\u50ac\u7720\u6620\u50cf","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"42":{"TrapName":"\u50ac\u7720\u5f3a\u5978","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"43":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"44":{"TrapName":"\u58c1\u53e3\u4ea4","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"45":{"TrapName":"\u80f8\u6ce8\u5c04","TrapMemo":"\u5f80\u80f8\u91cc\u6ce8\u5165\u4e86\u53ef\u7591\u7684\u6db2\u4f53\u3002","DamagePoint":"15","TrapType":"Touch","DamageType":"Extasy"},"46":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"47":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"48":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"49":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"50":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"51":{"TrapName":"\u9178\u6027\u7c98\u6db2","TrapMemo":"\u5bf9\u670d\u88c5\u7684\u8010\u4e45\u9020\u6210\u635f\u4f24\u3002","DamagePoint":"15","TrapType":"Fall","DamageType":"Cloth"},"52":{"TrapName":"\u7cbe\u6db2\u53f2\u83b1\u59c6","TrapMemo":"\u5927\u91cf\u7684\u767d\u6d4a\u6db2\u9644\u7740\u5728\u8eab\u4f53\u4e0a\u3002","DamagePoint":"2","TrapType":"Fall","DamageType":"Semen"},"53":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"54":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"55":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"56":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"57":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"58":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"59":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"60":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"61":{"TrapName":"\u30a6\u30a3\u30c3\u30d7","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"62":{"TrapName":"\u6c34\u8f66","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"63":{"TrapName":"\u6309\u6469\u673a","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"64":{"TrapName":"\u6ce8\u5c04","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"65":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"66":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"67":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"68":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"69":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"70":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"71":{"TrapName":"\u9501\u675f\u7f1a","TrapMemo":"\u7531\u4e8e\u9501\u94fe\u4e0d\u80fd\u52a8\u5f39\u3002","DamagePoint":"","TrapType":"","DamageType":""},"72":{"TrapName":"\u58c1\u5c3b","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"73":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"74":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"75":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"76":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"77":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"78":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"79":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"80":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"81":{"TrapName":"\u7634\u6c14\u5f39","TrapMemo":"HP\u53d7\u5230\u4f24\u5bb3\uff0c\u7634\u6c14\u503c\u4e0a\u5347\u3002","DamagePoint":"50","TrapType":"Touch","DamageType":"Miasma"},"82":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"83":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"84":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"85":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"86":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"87":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"88":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"89":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"90":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"91":{"TrapName":"\u7f9e\u803b\u7167\u76f8\u673a","TrapMemo":"\u6355\u6349\u5bb3\u7f9e\u7684\u6837\u5b50\u8fdb\u884c\u62cd\u6444\u3002","DamagePoint":"0","TrapType":"Touch","DamageType":""},"92":{"TrapName":"\u900f\u660e\u9886\u57df","TrapMemo":"\u670d\u88c5\u4f1a\u53d8\u5f97\u900f\u660e\u3002","DamagePoint":"0","TrapType":"Floor","DamageType":"State"},"93":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"94":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"95":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"96":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"97":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"98":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"99":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"100":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"101":{"TrapName":"\u7206\u88c2\u9b54\u6cd5","TrapMemo":"\u53d7\u5230\u708e\u5c5e\u6027\u4f24\u5bb3\u3002","DamagePoint":"100","TrapType":"Touch","DamageType":"HP"},"102":{"TrapName":"\u76c6","TrapMemo":"\u53d7\u5230\u56fa\u5b9a\u4f24\u5bb3\uff0c\u6709\u70b9\u70e6\u8e81\u3002","DamagePoint":"10","TrapType":"Fall","DamageType":"HP"},"103":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"104":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"105":{"TrapName":"\u98de\u9488","TrapMemo":"\u4ece\u5730\u677f\u5c04\u51fa\u7684\u9488\u9020\u6210\u7269\u7406\u5c5e\u6027\u7684\u4f24\u5bb3\u3002","DamagePoint":"25","TrapType":"Floor","DamageType":"HP"},"106":{"TrapName":"\u6bd2\u98de\u9488","TrapMemo":"\u4ece\u5730\u677f\u5c04\u51fa\u7684\u9488\u9020\u6210\u6bd2\u548c\u7269\u7406\u5c5e\u6027\u7684\u4f24\u5bb3\u3002","DamagePoint":"50","TrapType":"Floor","DamageType":"HP"},"107":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"108":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"109":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"110":{"TrapName":"\u7535\u51fb","TrapMemo":"\u53d7\u5230\u7535\u51fb\u5c5e\u6027\u4f24\u5bb3\u3002","DamagePoint":"100","TrapType":"Touch","DamageType":"HP"},"111":{"TrapName":"\u5feb\u4e50\u7535\u6d41","TrapMemo":"\u5feb\u4e50\u7684\u8109\u51b2\u707c\u70e7\u795e\u7ecf\uff0c\u5f3a\u5236\u6027\u5730\u63d0\u9ad8\u654f\u611f\u503c\u3002","DamagePoint":"20","TrapType":"Touch","DamageType":"Extasy"},"112":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"113":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"114":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"115":{"TrapName":"\u8f6c\u79fb","TrapMemo":"\u5f3a\u5236\u79fb\u52a8\u5230\u67d0\u4e2a\u5730\u65b9\u3002","DamagePoint":"0","TrapType":"Floor","DamageType":"Studio"},"116":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"117":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"118":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"119":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"120":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"121":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"122":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"123":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"124":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"125":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"126":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"127":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"128":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"129":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""},"130":{"TrapName":"","TrapMemo":"","DamagePoint":"","TrapType":"","DamageType":""}}
+{
+	"1": {
+		"TrapName": "媚毒喷雾",
+		"TrapMemo": "含有大量催淫成分的气体，会使发情值上升。",
+		"DamagePoint": "50",
+		"TrapType": "Touch",
+		"DamageType": "Estrus"
+	},
+	"2": {
+		"TrapName": "触手爱抚",
+		"TrapMemo": "沾满粘液的触手玩弄着胸部。",
+		"DamagePoint": "20",
+		"TrapType": "Touch",
+		"DamageType": "Extasy"
+	},
+	"3": {
+		"TrapName": "白浊液喷射",
+		"TrapMemo": "向身体喷射白浊液。",
+		"DamagePoint": "1",
+		"TrapType": "Touch",
+		"DamageType": "Semen"
+	},
+	"4": {
+		"TrapName": "能量吸收",
+		"TrapMemo": "能够吸收HP的可疑的球体。",
+		"DamagePoint": "50",
+		"TrapType": "Touch",
+		"DamageType": "HP"
+	},
+	"5": {
+		"TrapName": "转移门",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"6": {
+		"TrapName": "镭射激光",
+		"TrapMemo": "能够吸收HP的可疑的光线。",
+		"DamagePoint": "50",
+		"TrapType": "Touch",
+		"DamageType": "HP"
+	},
+	"7": {
+		"TrapName": "毒沼泽",
+		"TrapMemo": "每次移动都会受到侵蚀，对HP造成伤害。",
+		"DamagePoint": "5",
+		"TrapType": "Field",
+		"DamageType": "HP"
+	},
+	"8": {
+		"TrapName": "魔蚀的毒沼泽",
+		"TrapMemo": "每次移动都会被夺走魔力，消耗MP。",
+		"DamagePoint": "5",
+		"TrapType": "Field",
+		"DamageType": "MP"
+	},
+	"9": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"10": {
+		"TrapName": "喷射",
+		"TrapMemo": "向身体喷射白浊液。",
+		"DamagePoint": "1",
+		"TrapType": "Floor",
+		"DamageType": "Semen"
+	},
+	"11": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"12": {
+		"TrapName": "媚药沼泽",
+		"TrapMemo": "每次移动毒都会渗透到身体里。",
+		"DamagePoint": "1",
+		"TrapType": "Field",
+		"DamageType": "Estrus"
+	},
+	"13": {
+		"TrapName": "精液沼泽",
+		"TrapMemo": "每次移动都会有大量的精液弄脏身体。",
+		"DamagePoint": "1",
+		"TrapType": "Field",
+		"DamageType": "Semen"
+	},
+	"14": {
+		"TrapName": "地面之手",
+		"TrapMemo": "被从地面上伸出来的手拘束然后玩弄着。",
+		"DamagePoint": "15",
+		"TrapType": "Floor",
+		"DamageType": "Extasy"
+	},
+	"15": {
+		"TrapName": "墙之手",
+		"TrapMemo": "被从墙上伸出来的无数只手玩弄着全身。",
+		"DamagePoint": "20",
+		"TrapType": "Touch",
+		"DamageType": "Extasy"
+	},
+	"16": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"17": {
+		"TrapName": "市民之手",
+		"TrapMemo": "从人群中伸出来的下流的手。",
+		"DamagePoint": "20",
+		"TrapType": "Touch",
+		"DamageType": "Extasy"
+	},
+	"18": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"19": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"20": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"21": {
+		"TrapName": "触手沼泽",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "Field",
+		"DamageType": ""
+	},
+	"22": {
+		"TrapName": "触手之壁",
+		"TrapMemo": "被从墙上突然长出来的触手缠住，责弄着全身。",
+		"DamagePoint": "10",
+		"TrapType": "Touch",
+		"DamageType": "Extasy"
+	},
+	"23": {
+		"TrapName": "地之触手",
+		"TrapMemo": "从地板上伸出的触手刺激着秘处。",
+		"DamagePoint": "10",
+		"TrapType": "Floor",
+		"DamageType": "Extasy"
+	},
+	"24": {
+		"TrapName": "地之触手",
+		"TrapMemo": "从地板上伸出的触手刺激着后穴。",
+		"DamagePoint": "10",
+		"TrapType": "Floor",
+		"DamageType": "Extasy"
+	},
+	"25": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"26": {
+		"TrapName": "触手拘束",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"27": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"28": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"29": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"30": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"31": {
+		"TrapName": "触手责弄",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"32": {
+		"TrapName": "刷子触手责弄",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"33": {
+		"TrapName": "吸盘触手责弄",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"34": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"35": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"36": {
+		"TrapName": "触手寄生",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"37": {
+		"TrapName": "触手服",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"38": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"39": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"40": {
+		"TrapName": "催眠装置",
+		"TrapMemo": "妖力侵蚀着心灵……。",
+		"DamagePoint": "10",
+		"TrapType": "Touch",
+		"DamageType": "Hypnosis"
+	},
+	"41": {
+		"TrapName": "催眠映像",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"42": {
+		"TrapName": "催眠强奸",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"43": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"44": {
+		"TrapName": "壁口交",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"45": {
+		"TrapName": "胸注射",
+		"TrapMemo": "往胸里注入了可疑的液体。",
+		"DamagePoint": "15",
+		"TrapType": "Touch",
+		"DamageType": "Extasy"
+	},
+	"46": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"47": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"48": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"49": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"50": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"51": {
+		"TrapName": "酸性粘液",
+		"TrapMemo": "对服装的耐久造成损伤。",
+		"DamagePoint": "25",
+		"TrapType": "Fall",
+		"DamageType": "Cloth"
+	},
+	"52": {
+		"TrapName": "精液史莱姆",
+		"TrapMemo": "大量的白浊液附着在身体上。",
+		"DamagePoint": "2",
+		"TrapType": "Fall",
+		"DamageType": "Semen"
+	},
+	"53": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"54": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"55": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"56": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"57": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"58": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"59": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"60": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"61": {
+		"TrapName": "ウィップ",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"62": {
+		"TrapName": "水车",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"63": {
+		"TrapName": "按摩机",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"64": {
+		"TrapName": "注射",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"65": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"66": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"67": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"68": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"69": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"70": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"71": {
+		"TrapName": "锁束缚",
+		"TrapMemo": "由于锁链不能动弹。",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"72": {
+		"TrapName": "壁尻",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"73": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"74": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"75": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"76": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"77": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"78": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"79": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"80": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"81": {
+		"TrapName": "瘴气弹",
+		"TrapMemo": "HP受到伤害，瘴气值上升。",
+		"DamagePoint": "50",
+		"TrapType": "Touch",
+		"DamageType": "Miasma"
+	},
+	"82": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"83": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"84": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"85": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"86": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"87": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"88": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"89": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"90": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"91": {
+		"TrapName": "羞耻照相机",
+		"TrapMemo": "捕捉害羞的样子进行拍摄。",
+		"DamagePoint": "0",
+		"TrapType": "Touch",
+		"DamageType": ""
+	},
+	"92": {
+		"TrapName": "透明领域",
+		"TrapMemo": "服装会变得透明。",
+		"DamagePoint": "0",
+		"TrapType": "Floor",
+		"DamageType": "State"
+	},
+	"93": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"94": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"95": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"96": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"97": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"98": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"99": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"100": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"101": {
+		"TrapName": "爆裂魔法",
+		"TrapMemo": "受到炎属性伤害。",
+		"DamagePoint": "100",
+		"TrapType": "Touch",
+		"DamageType": "HP"
+	},
+	"102": {
+		"TrapName": "盆",
+		"TrapMemo": "受到固定伤害，有点烦躁。",
+		"DamagePoint": "10",
+		"TrapType": "Fall",
+		"DamageType": "HP"
+	},
+	"103": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"104": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"105": {
+		"TrapName": "飞针",
+		"TrapMemo": "从地板射出的针造成物理属性的伤害。",
+		"DamagePoint": "50",
+		"TrapType": "Floor",
+		"DamageType": "HP"
+	},
+	"106": {
+		"TrapName": "毒飞针",
+		"TrapMemo": "从地板射出的针造成毒和物理属性的伤害。",
+		"DamagePoint": "100",
+		"TrapType": "Floor",
+		"DamageType": "HP"
+	},
+	"107": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"108": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"109": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"110": {
+		"TrapName": "电击",
+		"TrapMemo": "受到电击属性伤害。",
+		"DamagePoint": "100",
+		"TrapType": "Touch",
+		"DamageType": "HP"
+	},
+	"111": {
+		"TrapName": "快乐电流",
+		"TrapMemo": "快乐的脉冲灼烧神经，强制性地提高敏感值。",
+		"DamagePoint": "200",
+		"TrapType": "Touch",
+		"DamageType": "Extasy"
+	},
+	"112": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"113": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"114": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"115": {
+		"TrapName": "转移",
+		"TrapMemo": "强制移动到某个地方。",
+		"DamagePoint": "0",
+		"TrapType": "Floor",
+		"DamageType": "Studio"
+	},
+	"116": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"117": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"118": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"119": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"120": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"121": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"122": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"123": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"124": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"125": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"126": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"127": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"128": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"129": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	},
+	"130": {
+		"TrapName": "",
+		"TrapMemo": "",
+		"DamagePoint": "",
+		"TrapType": "",
+		"DamageType": ""
+	}
+}

@@ -68,13 +68,14 @@
   //
   var _Scene_Battle_commandAttack = Scene_Battle.prototype.commandAttack;
   Scene_Battle.prototype.commandAttack = function() {
-    BattleManager.inputtingAction().setAttack();
-    // normal attack weapon (or other single attack weapon)
     var action = BattleManager.inputtingAction();
-    if(action.needsSelection() && action.isForOpponent()){
-      _Scene_Battle_commandAttack.call(this);
-      return;
-    }
+	if(action){
+		action.setAttack();
+		if(action.needsSelection() && action.isForOpponent()){
+			_Scene_Battle_commandAttack.call(this);
+			return;
+		}
+	}
     // special skill weapon
     this.onSelectAction();
   };

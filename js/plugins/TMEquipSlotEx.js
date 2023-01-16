@@ -116,7 +116,7 @@ if (!TMPlugin.InterpreterBase) {
     if (command === 'changeEquipSlotEx') {
       var arr = args.map(this.convertEscapeCharactersTM, this);
       var actor = $gameActors.actor(+arr[0]);
-      if (actor) {
+      if (actor && actor.isEquipChangeOk(+arr[1])) {
         var item = +arr[1] === 0 || (+arr[1] === 1 && actor.isDualWield()) ?
           $dataWeapons[+arr[2]] : $dataArmors[+arr[2]];
         actor.changeEquip(+arr[1], item);

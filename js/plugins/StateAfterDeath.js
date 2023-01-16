@@ -87,9 +87,10 @@
         param.states = [];
     }
 
-    var _Game_BattlerBase_die      = Game_BattlerBase.prototype.die;
+    var _Game_BattlerBase_die = Game_BattlerBase.prototype.die;
     Game_BattlerBase.prototype.die = function() {
-        var stillStates     = this._states.filter(function(stateId) {
+		var stillStates = [];
+        var stillStates = this._states.filter(function(stateId) {
             return param.states.contains(stateId);
         });
         var stillStateTurns = {};
@@ -97,7 +98,7 @@
             stillStateTurns[stateId] = this._stateTurns[stateId];
         }, this);
         _Game_BattlerBase_die.apply(this, arguments);
-        this._states     = this._states.concat(stillStates);
+        this._states = stillStates;
         this._stateTurns = stillStateTurns;
     };
 })();

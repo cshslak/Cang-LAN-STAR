@@ -1,6 +1,6 @@
 function damagecul_normal(a_atk, b_def,level,e_enhance){
     var damage = 0;
-    var enhance = $gameVariables.value(1211);
+    var enhance = 0;
     if($gameVariables.value(e_enhance) >= 1){
         enhance += $gameVariables.value(e_enhance)
     }
@@ -16,7 +16,6 @@ function damagecul_normal(a_atk, b_def,level,e_enhance){
 function damagecul_magic(a_atk, b_def,level,e_enhance){
     var damage = 0;
     var enhance = $gameVariables.value(1199);
-    enhance += $gameVariables.value(1211);
     if($gameVariables.value(e_enhance) >= 1){
         enhance += $gameVariables.value(e_enhance)
     }

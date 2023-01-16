@@ -559,7 +559,17 @@ FTKR.EVC = FTKR.EVC || {};
         _EVC_Game_Action_apply.call(this, target);
         this.evcVariablesChange(target);
     };
-
+	
+	Game_Action.prototype.isOppose = function(user,target) {
+		if(user.isActor()){
+			if(target.isEnemy()) return true;
+			return false;
+		}else{
+			if(target.isEnemy()) return false;
+			return true;
+		}
+	};
+	
     Game_Action.prototype.evcVariablesChange = function(target) {
         var result = target.result();
         if (!result.used) return false;
@@ -567,6 +577,11 @@ FTKR.EVC = FTKR.EVC || {};
         this.variablesChangeItemNoteTags(['使用時', 'USE'], this.subject());
         defaultVariablesChange('use');
         if (result.isHit()) {
+			if(this.item().scope > 6){
+				if(this.isOppose(this.subject(),target)) return true;
+			}else{
+				if(!this.isOppose(this.subject(),target)) return true;
+			}
             this.variablesChangeItemNoteTags(['使用成功時', 'SUCCESS'], this.subject());
             defaultVariablesChange('success');
             if (this.killedTargetEnemy(target)) {

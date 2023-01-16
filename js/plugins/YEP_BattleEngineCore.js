@@ -2838,15 +2838,9 @@ BattleManager.makeEscapeRatio = function() {
         this._escapeRatio = 0;
         Yanfly.Util.displayError(e, code, 'ESCAPE RATIO FORMULA ERROR');
       }
-      var code = Yanfly.Param.BECEscFail;
-      try {
-        this._escapeFailBoost = eval(code);
-      } catch (e) {
-        this._escapeFailBoost = 0;
-        Yanfly.Util.displayError(e, code, 'ESCAPE FAIL BOOST FORMULA ERROR');
-      }
+	  this._escapeRatio *= (5 + this._escapeFailBoost) / 5;
     } else {
-      this._escapeFailBoost = 0.1;
+	  this._escapeFailBoost = 0.10;
       Yanfly.BEC.BattleManager_makeEscapeRatio.call(this);
     }
 };
@@ -2958,7 +2952,8 @@ BattleManager.processVictory = function() {
 };
 
 BattleManager.processEscape = function() {
-    $gameParty.performEscape();
+    this.makeEscapeRatio();
+	$gameParty.performEscape();
     SoundManager.playEscape();
     var success = this._preemptive ? true : (Math.random() < this._escapeRatio);
     if ($gamePlayer.isDebugThrough()) success = true;
@@ -2969,7 +2964,7 @@ BattleManager.processEscape = function() {
         this.processAbort();
     } else {
         this.displayEscapeFailureMessage();
-        this._escapeRatio += this._escapeFailBoost;
+        this._escapeFailBoost++;
         $gameParty.clearActions();
         this.startTurn();
     }

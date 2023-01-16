@@ -20,13 +20,13 @@
 
         //経験値計算用
         var NextEXP = 0
-        var EXPBASE = 20 //基本値
+        var EXPBASE = 33 //基本値
         var EXPPER = 1.1 //倍率
         var EXPADD = NowLV + 1 //加算値
         //EXPADD * 30 //現在のレベルのn倍
         //NextEXP = EXPBASE + (EXPADD * EXPPER)
         //計算式
-        NextEXP = EXPBASE + EXPBASE*(EXPPER*EXPADD-1.1)/0.5
+        NextEXP = 33 + 44 * NowLV;
         
 
         NextEXP = Math.floor(NextEXP)//小数点を消す

@@ -2453,7 +2453,7 @@ Window_Base.prototype.drawActorTp = function(actor, x, y, width) {
     width = width || 96;
     var color1 = this.tpGaugeColor1();
     var color2 = this.tpGaugeColor2();
-    this.drawGauge(x, y, width, actor.tpRate(), color1, color2);
+    this.drawGauge(x, y, width, actor.tpRate(), color1, color2, true);
     this.changeTextColor(this.systemColor());
     this.drawText(TextManager.tpA, x, y, 44);
     this.changeTextColor(this.tpColor(actor));

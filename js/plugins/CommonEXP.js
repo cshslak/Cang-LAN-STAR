@@ -20,6 +20,8 @@
     Game_Interpreter.prototype.pluginCommand = function(command, args) {
       _Game_Interpreter_pluginCommand.call(this, command, args);
       if (command === 'CommonEXP') {
+		var CallSemen = false;
+		var Orgasm = 0;
         var PlayID = args[0]
         if(args[1] != null){
               var PlayType = args[1]//特殊なプレイなどに。0の場合は特になし
@@ -63,6 +65,9 @@
             }
             else if(PlayID == "乳首責め"){
                 PlayArray = ["乳首開発EXP"];
+            }
+			else if(PlayID == "口責め"){
+                PlayArray = ["口開発EXP"];
             }
             else if(PlayID == "膣責め"){
                 PlayArray = ["膣開発EXP"];
@@ -133,23 +138,33 @@
             else if(PlayID == "三穴セックス"){
                 PlayArray = ["奉仕経験","奉仕EXP","セックス経験","膣開発EXP","アナルセックス経験","肛穴開発EXP"];
             }
+			else if(PlayID == "ぶっかけ颜"){
+                PlayArray = ["浴精経験","精液経験","精液EXP"];
+				CallSemen = true;
+            }
             else if(PlayID == "ぶっかけ"){
                 PlayArray = ["浴精経験","精液経験","精液EXP"];
+				CallSemen = true;
             }
             else if(PlayID == "膣内射精"){
                 PlayArray = ["精液経験","膣内射精経験","精液EXP"];
+				CallSemen = true;
             }
             else if(PlayID == "肛内射精"){
                 PlayArray = ["精液経験","肛内射精経験","精液EXP"];
+				CallSemen = true;
             }
             else if(PlayID == "口内射精"){
                 PlayArray = ["精液経験","飲精経験","精液EXP"];
+				CallSemen = true;
             }
             else if(PlayID == "絶頂" || PlayID == "絶頂経験"){
                 PlayArray = ["絶頂経験"];
+				Orgasm = 1;
             }
             else if(PlayID == "強絶頂"){
                 PlayArray = ["強絶頂経験"];
+				Orgasm = 2;
             }
             else if(PlayID == "絶頂失神"){
                 PlayArray = ["絶頂失神経験"];
@@ -257,9 +272,76 @@
                 PlayTypeArray = ["なし"];
                 {console.error(PlayTypeArray + 'コマンド名指定ミス');}
             }
+		
+		if(Orgasm > 0){
+			//1033为淫欲阶段
+			if(Orgasm > 1) var b = (-$gameVariables.value(1033) + 7) / 2;
+			else var b = -$gameVariables.value(1033) + 5;
+			Orgasm += PlayNum + randomNum - 1;
+			//快感发情处理
+			$gameVariables._data[1026] *= ((0.8 - Orgasm * 0.4) + (0.2 + Orgasm * 0.4) * $gameVariables.value(1243) / 100).clamp(0,0.9);
+			$gameVariables._data[1027] -= Math.max(b * 5 * Orgasm - 5 + Math.randomInt(11),1);
+			//高潮扣血蓝处理
+			Orgasm *= (100 - $gameVariables.value(1281)) / 100;
+			if($gameParty.inBattle()){
+				$gameActors.actor(1).gainHp(-Math.round($gameActors.actor(1).mhp * Orgasm / 20));
+			}else{
+				$gameActors.actor(1).gainHp(-Math.round(Math.min($gameActors.actor(1).mhp * Orgasm / 20,$gameActors.actor(1).hp - 1)));
+			}
+			var a = $gameActors.actor(1).mmp * Orgasm / 30;
+			if($gameActors.actor(1).mp > -$gameActors.actor(1).mmp){
+				$gameSwitches._data[2916] = true;
+				$gameVariables._data[4893] = Math.min($gameActors.actor(1).mp + $gameActors.actor(1).mmp,a) * 4;
+			}else{
+				$gameSwitches._data[2916] = false;
+			}
+			$gameActors.actor(1).gainMp(-a);
+			//事件附加余韵
+			if($gameVariables.value(4762) > 0 || !$gameSwitches.value(2915)){
+			   $gameVariables._data[4762] = Math.min($gameVariables.value(4762),0);
+			   $gameSwitches._data[2915] = true;
+			}
+		}
+		
+		if(CallSemen){
+			if(PlayID == "ぶっかけ颜"){
+                $gameVariables._data[941] = $gameVariables.value(941) + PlayNum + randomNum
+                $gameVariables._data[2020] = $gameVariables.value(2020) + PlayNum + randomNum//ぶっかけ値
+            }
+            if(PlayID == "ぶっかけ"){
+                $gameVariables._data[942] = $gameVariables.value(942) + PlayNum + randomNum
+                $gameVariables._data[2020] = $gameVariables.value(2020) + PlayNum + randomNum//ぶっかけ値
+            }
+            else if(PlayID == "膣内射精"){
+                $gameVariables._data[944] = $gameVariables.value(944) + PlayNum + randomNum
+                $gameActors.actor(1).addState(37)
+				if($gameVariables.value(944) > 1){
+					$gameVariables._data[942] = $gameVariables.value(942) + PlayNum + randomNum
+					$gameVariables._data[2020] = $gameVariables.value(2020) + PlayNum + randomNum		
+				}					
+				this.pluginCommand('ExtasySemen',[0]);
+            }
+            else if(PlayID == "肛内射精"){
+                $gameVariables._data[945] = $gameVariables.value(945) + PlayNum + randomNum
+                $gameActors.actor(1).addState(38)
+				if($gameVariables.value(945) > 1){
+					$gameVariables._data[942] = $gameVariables.value(942) + PlayNum + randomNum
+					$gameVariables._data[2020] = $gameVariables.value(2020) + PlayNum + randomNum		
+				}				
+            }
+            else if(PlayID == "口内射精"){
+                $gameVariables._data[943] = $gameVariables.value(943) + PlayNum + randomNum
+                $gameActors.actor(1).addState(39)
+				if($gameVariables.value(943) > 1){
+					$gameVariables._data[941] = $gameVariables.value(941) + PlayNum + randomNum
+					$gameVariables._data[2020] = $gameVariables.value(2020) + PlayNum + randomNum		
+				}
+                this.pluginCommand('SkillSemenDrunker',[0]);//飲精スキル
+            }
 
 
-
+            $gameVariables._data[360] = 0;
+	    }
 
         if(PlayArray[0] != 0){
             for(var i = 0; i < PlayArray.length; i++){
@@ -271,14 +353,20 @@
                 if(PlayArray[i] == "露出経験"){$gameVariables._data[2149] += PlayNum + randomNum}
                 if(PlayArray[i] == "被虐経験"){$gameVariables._data[2076] += PlayNum + randomNum}
                 if(PlayArray[i] == "羞恥経験"){$gameVariables._data[2062] += PlayNum + randomNum}
-                if(PlayArray[i] == "セックス経験"){$gameVariables._data[2045] += PlayNum + randomNum}
+                if(PlayArray[i] == "セックス経験"){
+					$gameVariables._data[2045] += PlayNum + randomNum;
+					$gameVariables._data[4875] = 0;
+				}
                 if(PlayArray[i] == "アナルセックス経験"){$gameVariables._data[2046] += PlayNum + randomNum}
                 if(PlayArray[i] == "人外セックス経験"){$gameVariables._data[2047] += PlayNum + randomNum}
                 if(PlayArray[i] == "人外アナルセックス経験"){$gameVariables._data[2048] += PlayNum + randomNum}
                 if(PlayArray[i] == "浴精経験"){$gameVariables._data[2054] += PlayNum + randomNum}
                 if(PlayArray[i] == "膣内射精経験"){$gameVariables._data[2053] += PlayNum + randomNum}
                 if(PlayArray[i] == "肛内射精経験"){$gameVariables._data[2056] += PlayNum + randomNum}
-                if(PlayArray[i] == "飲精経験"){$gameVariables._data[2055] += PlayNum + randomNum}
+                if(PlayArray[i] == "飲精経験"){
+					$gameVariables._data[2055] += PlayNum + randomNum;
+					$gameVariables._data[4876] = 0;
+				}
                 if(PlayArray[i] == "絶頂経験"){$gameVariables._data[2057] += PlayNum + randomNum}
                 if(PlayArray[i] == "強絶頂経験"){$gameVariables._data[2058] += PlayNum + randomNum}
                 if(PlayArray[i] == "絶頂失神経験"){$gameVariables._data[2059] += PlayNum + randomNum}
@@ -295,14 +383,20 @@
                 if(PlayTypeArray[i] == "なし"){}
                 if(PlayTypeArray[i] == "愛撫経験"){$gameVariables._data[2041] += PlayNum}
                 if(PlayTypeArray[i] == "凌辱経験"){$gameVariables._data[2061] += PlayNum}
-                if(PlayTypeArray[i] == "敗北凌辱経験"){$gameVariables._data[2070] += PlayNum}
+                if(PlayTypeArray[i] == "敗北凌辱経験"){
+					$gameVariables._data[2070] += PlayNum;
+					$gameVariables._data[4900] += 1;
+				}
                 if(PlayTypeArray[i] == "痴漢経験"){$gameVariables._data[2063] += PlayNum}
                 if(PlayTypeArray[i] == "自慰経験"){$gameVariables._data[2043] += PlayNum}
                 if(PlayTypeArray[i] == "セクハラ経験"){$gameVariables._data[2152] += PlayNum}
                 if(PlayTypeArray[i] == "触手経験"){$gameVariables._data[2156] += PlayNum}
                 if(PlayTypeArray[i] == "怪魔接触経験"){$gameVariables._data[2155] += PlayNum}
                 if(PlayTypeArray[i] == "輪姦経験"){$gameVariables._data[2065] += PlayNum}
-                if(PlayTypeArray[i] == "便器経験"){$gameVariables._data[2066] += PlayNum}
+                if(PlayTypeArray[i] == "便器経験"){
+					$gameVariables._data[2066] += PlayNum;
+					$gameVariables._data[4900] += 1;
+				}
                 if(PlayTypeArray[i] == "催眠経験"){$gameVariables._data[2067] += PlayNum}
                 if(PlayTypeArray[i] == "洗脳経験"){$gameVariables._data[2068] += PlayNum}
                 if(PlayTypeArray[i] == "売春経験"){$gameVariables._data[2069] += PlayNum}

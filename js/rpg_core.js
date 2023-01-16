@@ -4292,7 +4292,8 @@ Sprite.prototype._executeTint = function(x, y, w, h) {
     var r1 = Math.max(0, tone[0]);
     var g1 = Math.max(0, tone[1]);
     var b1 = Math.max(0, tone[2]);
-    context.globalCompositeOperation = 'lighter';
+	if(tone[4] == 1) context.globalCompositeOperation = 'color';
+    else context.globalCompositeOperation = 'lighter';
     context.fillStyle = Utils.rgbToCssColor(r1, g1, b1);
     context.fillRect(0, 0, w, h);
 
@@ -4304,7 +4305,8 @@ Sprite.prototype._executeTint = function(x, y, w, h) {
         var r2 = Math.max(0, -tone[0]);
         var g2 = Math.max(0, -tone[1]);
         var b2 = Math.max(0, -tone[2]);
-        context.globalCompositeOperation = 'lighter';
+        if(tone[4] == 1) context.globalCompositeOperation = 'color';
+		else context.globalCompositeOperation = 'lighter';
         context.fillStyle = Utils.rgbToCssColor(r2, g2, b2);
         context.fillRect(0, 0, w, h);
 
@@ -5299,6 +5301,17 @@ Tilemap.getAutotileShape = function(tileId) {
 
 Tilemap.makeAutotileId = function(kind, shape) {
     return this.TILE_ID_A1 + kind * 48 + shape;
+};
+
+Tilemap.isSameKindTileArray = function(tileID1, Array) {
+    for(var i = 0;i < Array.length;i++){
+		if (this.isAutotile(tileID1) && this.isAutotile(Array[i])) {
+			if(this.getAutotileKind(tileID1) === this.getAutotileKind(Array[i])) return true;
+		} else {
+			if(tileID1 === Array[i]) return true;
+		}
+	}
+	return false;
 };
 
 Tilemap.isSameKindTile = function(tileID1, tileID2) {

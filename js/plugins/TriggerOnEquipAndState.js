@@ -258,6 +258,7 @@
     //=============================================================================
     var _Game_Actor_changeEquip      = Game_Actor.prototype.changeEquip;
     Game_Actor.prototype.changeEquip = function(slotId, item) {
+		if(!this._equips[slotId]) return;
         var prevItem = new Game_Item(this._equips[slotId].object());
         _Game_Actor_changeEquip.apply(this, arguments);
         var newItem = this._equips[slotId];

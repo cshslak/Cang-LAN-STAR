@@ -703,7 +703,7 @@ Imported.TMSoloMenu = true;
     } else if (paramId < 28) {
       var value = (actor.sparam(paramId - 18) * 100).toFixed(+parameter.fixed);
     }
-    this.drawText(value, x + width - textWidth, y, textWidth, 'right');
+    this.drawText(value, x + width - textWidth, y, textWidth, 'middle');
     this.resetFontSettings();
   };
 

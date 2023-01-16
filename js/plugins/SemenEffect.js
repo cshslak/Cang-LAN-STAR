@@ -66,66 +66,9 @@
 
         //回想中分岐
         if(SemenScene == 0){
-            
-            
-            if(SemenPart == '顔' || SemenPart == 'Face'){
-                $gameVariables._data[941] = $gameVariables.value(941) + SemenMath
-                $gameActors.actor(1).addState(39)
-                $gameVariables._data[2020] = $gameVariables.value(2020) + SemenMath//ぶっかけ値
-            }
-            else if(SemenPart == '身体' || SemenPart == 'Body'){
-                $gameVariables._data[942] = $gameVariables.value(942) + SemenMath
-                $gameActors.actor(1).addState(36)
-                $gameVariables._data[2020] = $gameVariables.value(2020) + SemenMath//ぶっかけ値
-            }
-            else if(SemenPart == '膣' || SemenPart == 'Vagina'){
-                $gameVariables._data[944] = $gameVariables.value(944) + SemenMath
-                $gameActors.actor(1).addState(37)
-                if($gameSwitches.value(200)){$gameVariables._data[360] = 1}//戦闘中、射精で解放する処理
-            }
-            else if(SemenPart == '肛穴' || SemenPart == 'Anus'){
-                $gameVariables._data[945] = $gameVariables.value(945) + SemenMath
-                $gameActors.actor(1).addState(38)
-                if($gameSwitches.value(200)){$gameVariables._data[360] = 2}//戦闘中、射精で解放する処理
-            }
-            else if(SemenPart == '口' || SemenPart == 'Mouth'){
-                $gameVariables._data[943] = $gameVariables.value(943) + SemenMath
-                $gameActors.actor(1).addState(39)
-                if($gameSwitches.value(200)){$gameVariables._data[360] = 3}//戦闘中、射精で解放する処理
-                this.pluginCommand('SkillSemenDrunker',[0]);//飲精スキル
-            }
-
-            if($gameVariables.value(360) == 1){$gameVariables._data[352] = 0}
-            if($gameVariables.value(360) == 2){$gameVariables._data[353] = 0}
-            if($gameVariables.value(360) == 3){$gameVariables._data[351] = 0}
-
-            $gameVariables._data[360] = 0
-
-            this.pluginCommand('SkillSemenHeal',[0]);//吸精スキル
-            this.pluginCommand('SkillDrainSl',[0]);//吸魂スキル
-
-
-
-        }else{
-            if(SemenPart == '顔' || SemenPart == 'Face'){$gameVariables._data[2517] = $gameVariables.value(2517) + SemenMath}
-            else if(SemenPart == '身体' || SemenPart == 'Body'){$gameVariables._data[2516] = $gameVariables.value(2516) + SemenMath}
-            else if(SemenPart == '膣' || SemenPart == 'Vagina'){
-                $gameVariables._data[2519] = $gameVariables.value(2519) + SemenMath
-            }
-            else if(SemenPart == '肛穴' || SemenPart == 'Anus'){
-                $gameVariables._data[2520] = $gameVariables.value(2520) + SemenMath
-            }
-            else if(SemenPart == '口' || SemenPart == 'Mouth'){
-                $gameVariables._data[2518] = $gameVariables.value(258) + SemenMath
-            }
+			
         }
-
-
-
-        $gameVariables._data[612] = 0
-
-
-            
+   
     }
   };
 })();

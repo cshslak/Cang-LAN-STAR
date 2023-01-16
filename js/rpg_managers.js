@@ -467,6 +467,12 @@ function ConfigManager() {
 
 ConfigManager.alwaysDash        = false;
 ConfigManager.commandRemember   = false;
+ConfigManager.NoFpsLimit = false;
+ConfigManager.JumpE = false;
+ConfigManager.RandomE = false;
+ConfigManager.Home = false;
+ConfigManager.PregDebuff = false;
+ConfigManager.Erode = false;
 
 Object.defineProperty(ConfigManager, 'bgmVolume', {
     get: function() {
@@ -530,6 +536,12 @@ ConfigManager.makeData = function() {
     var config = {};
     config.alwaysDash = this.alwaysDash;
     config.commandRemember = this.commandRemember;
+	config.NoFpsLimit = this.NoFpsLimit;
+	config.JumpE = this.JumpE;
+	config.RandomE = this.RandomE;
+	config.Home = this.Home;
+	config.PregDebuff = this.PregDebuff;
+	config.Erode = this.Erode;
     config.bgmVolume = this.bgmVolume;
     config.bgsVolume = this.bgsVolume;
     config.meVolume = this.meVolume;
@@ -540,6 +552,12 @@ ConfigManager.makeData = function() {
 ConfigManager.applyData = function(config) {
     this.alwaysDash = this.readFlag(config, 'alwaysDash');
     this.commandRemember = this.readFlag(config, 'commandRemember');
+	this.NoFpsLimit = this.readFlag(config,'NoFpsLimit');
+	this.JumpE = this.readFlag(config,'JumpE');
+	this.RandomE = this.readFlag(config,'RandomE');
+	this.Home = this.readFlag(config,'Home');
+	this.PregDebuff = this.readFlag(config,'PregDebuff');
+	this.Erode = this.readFlag(config,'Erode');
     this.bgmVolume = this.readVolume(config, 'bgmVolume');
     this.bgsVolume = this.readVolume(config, 'bgsVolume');
     this.meVolume = this.readVolume(config, 'meVolume');
@@ -1987,7 +2005,7 @@ SceneManager.updateMain = function() {
     if (Utils.isMobileSafari()) {
         this.changeScene();
         this.updateScene();
-    } else {
+    } else if(!ConfigManager.NoFpsLimit) {
         var newTime = this._getTimeInMsWithoutMobileSafari();
         var fTime = (newTime - this._currentTime) / 1000;
         if (fTime > 0.25) fTime = 0.25;
@@ -1999,7 +2017,11 @@ SceneManager.updateMain = function() {
             this.updateScene();
             this._accumulator -= this._deltaTime;
         }
-    }
+    } else {
+		this.updateInputData();
+		this.changeScene();
+		this.updateScene();
+	}
     this.renderScene();
     this.requestUpdate();
 };
@@ -2181,6 +2203,7 @@ BattleManager.initMembers = function() {
     this._statusWindow = null;
     this._spriteset = null;
     this._escapeRatio = 0;
+	this._escapeFailBoost = 0;
     this._escaped = false;
     this._rewards = {};
     this._turnForced = false;
@@ -2614,7 +2637,7 @@ BattleManager.processForcedAction = function() {
         this._subject = this._actionForcedBattler;
         this._actionForcedBattler = null;
         this.startAction();
-        this._subject.removeCurrentAction();
+        if(this._subject) this._subject.removeCurrentAction();
     }
 };
 
@@ -2629,7 +2652,7 @@ BattleManager.checkBattleEnd = function() {
         } else if ($gameParty.isAllDead()) {
             this.processDefeat();
             return true;
-        } else if ($gameTroop.isAllDead()) {
+        } else if ($gameTroop.isAllDead() && !$gameActors.actor(1).isStateAffected(166)) {
             this.processVictory();
             return true;
         }

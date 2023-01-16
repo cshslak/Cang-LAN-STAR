@@ -126,7 +126,7 @@
         var actor = BattleManager.actor();
         var id    = actor.attackSkillId();
         if (id !== actor.getDefaultAttackSkillId()) {
-            BattleManager.inputtingAction().setAttack();
+            if(BattleManager.inputtingAction()) BattleManager.inputtingAction().setAttack();
             this.onSelectAction();
         } else {
             _Scene_Battle_commandAttack.apply(this, arguments);
@@ -138,7 +138,7 @@
         var actor = BattleManager.actor();
         var id    = actor.guardSkillId();
         if (id !== actor.getDefaultGuardSkillId()) {
-            BattleManager.inputtingAction().setGuard();
+            if(BattleManager.inputtingAction()) BattleManager.inputtingAction().setGuard();
             this.onSelectAction();
         } else {
             _Scene_Battle_commandGuard.apply(this, arguments);

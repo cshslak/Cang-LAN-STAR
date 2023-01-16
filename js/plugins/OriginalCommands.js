@@ -114,7 +114,7 @@
         if(TickerVarID == 0){console.error(args[0] + 'パラメータ名が不正');}//0の時はエラー};
         if(TickerVarID != 0){
           $gameVariables._data[TickerVarID] = TickerMessage
-          this.setupChild($dataCommonEvents[97].list, 0)};              
+          $gameSwitches._data[91] = true;}           
       }
       if (command === 'CallPurpose') {
         var Pur = args[1];
@@ -158,17 +158,27 @@
             
         var ETypeID = 0
         if(EquipType == "Weapon" || EquipType == "武装" || EquipType == "0"){ETypeID = 0};
-        //if(EquipType == "Subweapon" || EquipType == "サブ武装" || EquipType == "1"){ETypeID = 1};
-        //if(EquipType == "Cloth" || EquipType == "衣装" || EquipType == "2"){ETypeID = 2};
-        //if(EquipType == "ClothOption" || EquipType == "衣装オプション" || EquipType == "3"){ETypeID = 3};
-        //if(EquipType == "Option" || EquipType == "追加外装" || EquipType == "4"){ETypeID = 4};
-        //if(EquipType == "Other" || EquipType == "その他" || EquipType == "5"){ETypeID = 5};
         if(EquipType == "Cloth" || EquipType == "衣装" || EquipType == "1"){ETypeID = 1};
         if(EquipType == "ClothOption" || EquipType == "衣装オプション" || EquipType == "2"){ETypeID = 2};
         if(EquipType == "Option" || EquipType == "追加外装" || EquipType == "3"){ETypeID = 3};
         if(EquipType == "Other" || EquipType == "その他" || EquipType == "4"){ETypeID = 4};
         if(EquipType == "Special" || EquipType == "特殊" || EquipType == "6"){ETypeID = 6};
         if(EquipType == "Leg" || EquipType == "脚" || EquipType == "7"){ETypeID = 7};
+		if(EquipType == "Special1" || EquipType == "13"){ETypeID = 8};  //颈
+		if(EquipType == "Special2" || EquipType == "14"){ETypeID = 9};  //眼部
+		if(EquipType == "Special3" || EquipType == "15"){ETypeID = 10}; //穿环
+		if(EquipType == "Special4" || EquipType == "16"){ETypeID = 11}; //口部
+		if(EquipType == "Special5" || EquipType == "17"){ETypeID = 12}; //下着
+		if(EquipType == "Special6" || EquipType == "18"){ETypeID = 13}; //耳朵
+		
+		//防止缺少装备崩溃
+		if(EquipID != 0){
+			if(ETypeID == 0){
+				if(!$gameParty.hasItem($dataWeapons[EquipID])) return;
+			}else{
+				if(!$gameParty.hasItem($dataArmors[EquipID])) return;
+		}}
+		
         $gameVariables._data[2701] = $gameVariables.value(2701) + ETypeID
         $gameVariables._data[2703] = $gameVariables.value(2703) + Number(EquipID)
         this.setupChild($dataCommonEvents[838].list, 0);
@@ -576,24 +586,23 @@
         var EroStage = 0
         var PartStage = 0
         var Stage1 = 0
-        var Stage2 = 3
-        var Stage3 = 5
-        if(EroPart == '口' || EroPart == 'Mouth'){EroStage = 1102}
+        var Stage2 = 2
+        var Stage3 = 4
+        if(EroPart == '口' || EroPart == 'Mouth'){PartStage = 1102}
         else if(EroPart == '乳首' || EroPart == 'Nipple'){PartStage = 1103}
         else if(EroPart == '陰核' || EroPart == 'Clit'){PartStage = 1104}
         else if(EroPart == '膣' || EroPart == 'Vagina'){PartStage = 1106}
         else if(EroPart == '肛穴' || EroPart == 'Anus'){PartStage = 1105}
-        else if(EroPart == '羞恥' || EroPart == 'Shame'){PartStage = 1110}
-        else if(EroPart == '精液' || EroPart == 'Semen'){PartStage = 1111}
+		else if(EroPart == '精液' || EroPart == 'Semen'){PartStage = 1111}
+        /* else if(EroPart == '羞恥' || EroPart == 'Shame'){PartStage = 1110}
         else if(EroPart == '被虐' || EroPart == 'Maso'){PartStage = 1112}
-        else if(EroPart == '奉仕' || EroPart == 'Service'){PartStage = 1113}
-        else{PartStage = 1102;console.log(段階判定指定ミス)}
-
+        else if(EroPart == '奉仕' || EroPart == 'Service'){PartStage = 1113} */
+        else{$gameVariables._data[496] = 0;return;}
         if($gameVariables.value(PartStage) >= Stage3){EroStage = 3}
         else if($gameVariables.value(PartStage) >= Stage2){EroStage = 2}
-        else if($gameVariables.value(PartStage) >= Stage1){EroStage = 1}
+        else {EroStage = 1}
 
-        $gameVariables._data[496] = 0 + EroStage
+        $gameVariables._data[496] = EroStage;
       }
 
   };

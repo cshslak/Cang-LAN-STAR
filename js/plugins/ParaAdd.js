@@ -89,7 +89,7 @@
       if(ParameterVariable === 0){ParameterNum = 0
         console.error('パラメータ名が不正');}//0の時はエラー
       if(ParameterNum != 0){
-        $gameVariables._data[ParameterVariable] += $gameVariables.value(ParameterVariable) + Number(ParameterNum);
+        $gameVariables._data[ParameterVariable] += Number(ParameterNum);
         ParameterNum = 0
       };//実際に加算する処理
     }

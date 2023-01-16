@@ -16,8 +16,8 @@
         if(AMLV == 'TRUE'){
             
             var LustLV = $gameVariables.value(1033)
-            if(LustLV >= 5){var AMLustLV = 'L3'}
-            else if(LustLV >= 3){var AMLustLV = 'L2'}
+            if(LustLV >= 3){var AMLustLV = 'L3'}
+            else if(LustLV >= 2){var AMLustLV = 'L2'}
             else{var AMLustLV = 'L1'}
 
             AMTicker += AMLustLV
@@ -31,23 +31,24 @@
             else if(ParaID == "Clit"){ParaBase = $gameVariables.value(1104);AMType = 1}
             else if(ParaID == "Vagina"){ParaBase = $gameVariables.value(1106);AMType = 1}
             else if(ParaID == "Anus"){ParaBase = $gameVariables.value(1105);AMType = 1}
-            else if(ParaID == "Shame"){ParaBase = $gameVariables.value(1271);AMType = 1}
+            else if(ParaID == "Shame"){ParaBase = $gameVariables.value(1093);AMType = 5}
             else if(ParaID == "Semen"){ParaBase = $gameVariables.value(1272);AMType = 1}
             else if(ParaID == "Maso"){ParaBase = $gameVariables.value(1273);AMType = 1}
             else if(ParaID == "Service"){ParaBase = $gameVariables.value(1274);AMType = 1}
-            else if(ParaID == "Pervert"){ParaBase = $gameVariables.value(1275);AMType = 1}
+            //else if(ParaID == "Pervert"){ParaBase = $gameVariables.value(1275);AMType = 1}
 
             //性感や発情
             else if(ParaID == "Estrus"){ParaBase = $gameVariables.value(1027);AMType = 2}
             else if(ParaID == "Extasy"){ParaBase = $gameVariables.value(1026);AMType = 3}
             else if(ParaID == "BindEX"){ParaBase = $gameVariables.value(414);AMType = 4}
-            else{ParaBase = $gameVariables.value(1102);AMType = 1}
+            else{ParaBase = 0;AMType = 1}
 
             //段階判定基準値
-            if(AMType == 1){var E1 = 0; var E2 = 3; var E3 = 5}//開発度
+            if(AMType == 1){var E1 = 0; var E2 = 2; var E3 = 4}//開発度
             else if(AMType == 2){var E1 = 0; var E2 = 50; var E3 = 100}//発情
             else if(AMType == 3){var E1 = 0; var E2 = 400; var E3 = 800}//快感度
             else if(AMType == 4){var E1 = 500; var E2 = 1000; var E3 = 2000}//拘束中快感
+			else if(AMType == 5){var E1 = 0; var E2 = 50; var E3 = 100}//羞耻度
 
             if(ParaBase >= E3){var AMParaLV = 'E3'}
             else if(ParaBase >= E2){var AMParaLV = 'E2'}

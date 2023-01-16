@@ -419,6 +419,10 @@ Game_Event.prototype.updateChaseDistance = function() {
 };
 
 Game_Event.prototype.chaseConditions = function(dis) {
+	if($gameSwitches.value(2929)){
+		this._alertLock = this._sightLock;
+		return true;
+	}
     if (dis <= this._chaseRange && this.nonSeePlayer()) {
       this._alertLock = this._sightLock;
       return true;
@@ -436,7 +440,7 @@ Game_Event.prototype.nonSeePlayer = function() {
       return false;
     }
   }
-  return !this._seePlayer;
+  return !this._seePlayer || $gameSwitches.value(2930);
 };
 
 Game_Event.prototype.startEventChase = function() {
@@ -529,7 +533,29 @@ Game_Event.prototype.alertConditions = function() {
 };
 
 Game_Event.prototype.activateAlert = function() {
-    if (this._alertBalloon >= 0) this.requestBalloon(this._alertBalloon);
+	var delX = this.x - $gamePlayer.x;
+	var delY = this.y - $gamePlayer.y;
+	var alertSwitch = true;
+	if (delX * delX + delY * delY >= 1){
+		if (delX * delX + delY * delY >= 40){
+			alertSwitch = false;
+		}else{
+			if (delX > 0) {
+				if(delY == 0) var direction = [6];
+				else var direction = (delY > 0) ? [6,2] : [6,8];
+			}else if(delX == 0){
+				if(delY == 0) return;
+				else var direction = (delY > 0) ? [2] : [8];
+			} else {
+				if(delY == 0) var direction = [4];
+				else var direction = (delY > 0) ? [4,2] : [4,8];
+			}
+			if(!direction.includes($gamePlayer.direction())){
+				alertSwitch = false;
+			}
+		}
+	}
+    if (this._alertBalloon >= 0 && alertSwitch) this.requestBalloon(this._alertBalloon);
     this._alertPlayer = true;
     this._alertTimer = Yanfly.Param.ECPAlertTimer;
     this.playAlertSound();

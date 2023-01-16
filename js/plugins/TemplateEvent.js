@@ -670,6 +670,34 @@ var $dataTemplateEvents = null;
             this.setPosition(event.x, event.y);
             this.refreshBushDepth();
         }
+		if(this._templateEvent) this._randomType = this._templateEvent.meta.hasOwnProperty('Random') ? this._templateEvent.meta['Random'] : undefined;
+		if($dataMap.meta["RandomPos"] && ConfigManager.RandomE){
+			if(this._randomType && this._randomType < 4){
+				if($gameSelfSwitches.getVariableValue([mapId, eventId, 16]) == $gameVariables.value(202)){
+					this.locate($gameSelfSwitches.getVariableValue([mapId, eventId, 13]),$gameSelfSwitches.getVariableValue([mapId, eventId, 14]));
+					this.setDirection($gameSelfSwitches.getVariableValue([mapId, eventId, 15]));}
+				else{
+					if(this._randomType == 1 && $gameSelfSwitches.getVariableValue([mapId, eventId, 17]) <= 100)	$gameSelfSwitches.setVariableValue([$gameMap.mapId(), eventId, 17], Math.randomInt(100));					
+					var times = 0;
+					while(true){
+						var x1 = Math.randomInt($dataMap.width);
+						var y1 = Math.randomInt($dataMap.height);
+						var mapData = $gameMap.layeredTiles(x1,y1);
+						times++;
+						if(Tilemap.isSameKindTileArray(mapData[3],$dataMap.meta.RandomPos) && $gameMap.eventIdXy(x1, y1) <= 0 && 
+						  ($gameMap.isPassable(x1,y1,2)||$gameMap.isPassable(x1,y1,4)||$gameMap.isPassable(x1,y1,6)||$gameMap.isPassable(x1,y1,8))){
+							this.locate(x1,y1);
+							break;
+						}
+						if(times >= 100) break;
+					}
+				}
+				if(this._randomType == 1 && $gameSelfSwitches.getVariableValue([mapId, eventId, 17]) <= $gameVariables.value(212)){
+					$dataMap.events.push(event);
+					$gameSelfSwitches.setVariableValue([mapId, $dataMap.events.length - 1, 17], 999);
+				}
+			}
+		}
     };
 
     var _Game_Event_setupPageSettings      = Game_Event.prototype.setupPageSettings;

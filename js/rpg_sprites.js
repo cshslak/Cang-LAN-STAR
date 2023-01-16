@@ -218,11 +218,52 @@ Sprite_Character.prototype.update = function() {
     this.updateOther();
 };
 
+Sprite_Character.prototype.playerSee = function(){
+	var delX = this._character.x - $gamePlayer.x;
+	var delY = this._character.y - $gamePlayer.y;
+	if (delX > 0) {
+		if(delY == 0) var direction = [6];
+		else var direction = (delY > 0) ? [6,2] : [6,8];
+	}else if(delX == 0){
+		if(delY == 0) return true;
+		else var direction = (delY > 0) ? [2] : [8];
+	} else {
+		if(delY == 0) var direction = [4];
+		else var direction = (delY > 0) ? [4,2] : [4,8];
+	}
+	if(direction.includes($gamePlayer.direction())) return true;
+	return false;
+}
+
+
 Sprite_Character.prototype.updateVisibility = function() {
     Sprite_Base.prototype.updateVisibility.call(this);
     if (this._character.isTransparent()) {
         this.visible = false;
     }
+	if(!this._character._randomType) return;
+	if(this._character._randomType){
+			var delX = this._character.x - $gamePlayer.x;
+			var delY = this._character.y - $gamePlayer.y;
+			var extra = $gameVariables.value(1220);
+			if (delX * delX + delY * delY <= 1){
+				if(this._character._randomType > 1) this._character._opacity += Math.min(60,65 + $gameVariables.value(1220) * 2 - this._character._opacity);
+				else this._character._opacity += Math.min(60,255 - this._character._opacity);
+				return;
+			}
+			if (delX * delX + delY * delY >= 40 + extra){
+				this._character._opacity -= Math.min(20,this._character._opacity);
+				this.endBalloon();
+				return;
+			}
+			if(!this.playerSee() && extra < 50){
+				this._character._opacity -= Math.min(20,this._character._opacity);
+				this.endBalloon();
+			}else{
+				if(this._character._randomType > 1) this._character._opacity += Math.min(60,65 + $gameVariables.value(1220) * 2 - this._character._opacity);
+				else this._character._opacity += Math.min(60,255 - this._character._opacity);
+			}
+	}
 };
 
 Sprite_Character.prototype.isTile = function() {
@@ -2438,6 +2479,7 @@ Spriteset_Battle.prototype.createLowerLayer = function() {
     this.createBackground();
     this.createBattleField();
     this.createBattleback();
+	if($gameSwitches.value(2917)) $gameScreen.showPicture(2,"Mask_black_b",0,0,0,100,100,255,0)
     this.createEnemies();
     this.createActors();
 };
